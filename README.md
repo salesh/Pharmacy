@@ -1,5 +1,5 @@
 # Pharmacy
 All essential functions. Technologies used: Java/JDBC/MySQL.
 
-![alt text](https://ibb.co/jZuMFd)
-![alt text](https://ibb.co/gLEz1J)
+![alt text](https://github.com/salesh/Pharmacy/blob/master/log.png)
+![alt text](https://github.com/salesh/Pharmacy/blob/master/main.png)

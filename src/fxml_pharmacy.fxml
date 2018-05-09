@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controlers.PharmacyController">
+   <children>
+      <HBox prefHeight="99.0" prefWidth="600.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="63.0" prefWidth="299.0">
+               <children>
+                  <ImageView fitHeight="84.0" fitWidth="108.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@logo.png" />
+                     </image>
+                  </ImageView>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="A Medic" textAlignment="CENTER" wrappingWidth="204.7294921875">
+                     <font>
+                        <Font size="32.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" prefHeight="99.0" prefWidth="676.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ulogovani ste kao" wrappingWidth="121.7294921875" />
+                  <Label fx:id="labelUser" alignment="CENTER" prefHeight="10.0" prefWidth="62.0" text="Label" />
+                  <Button fx:id="btnLogOut" mnemonicParsing="false" onAction="#fnLogOut" prefHeight="32.0" prefWidth="50.0">
+                     <graphic>
+                        <ImageView fitHeight="27.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@rsz_logout.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+      <TabPane prefHeight="600.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+            <Tab text="Izdavanje ">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="558.0" prefWidth="600.0">
+                     <children>
+                        <HBox layoutX="107.0" layoutY="113.0" prefHeight="567.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <HBox prefHeight="567.0" prefWidth="651.0">
+                                 <children>
+                                    <VBox maxWidth="-Infinity" prefHeight="567.0" prefWidth="718.0">
+                                       <children>
+                                          <VBox alignment="CENTER" prefHeight="28.0" prefWidth="616.0">
+                                             <children>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Stanje apoteke">
+                                                   <font>
+                                                      <Font size="20.0" />
+                                                   </font></Text>
+                                             </children>
+                                          </VBox>
+                                          <VBox prefHeight="88.0" prefWidth="616.0">
+                                             <children>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                                                         <children>
+                                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Naziv/šifra leka" wrappingWidth="118.056640625" />
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER_LEFT" prefHeight="66.0" prefWidth="414.0">
+                                                         <children>
+                                                            <HBox alignment="CENTER" prefHeight="88.0" prefWidth="283.0">
+                                                               <children>
+                                                                  <TextField fx:id="inputNameSearch" prefHeight="25.0" prefWidth="238.0" />
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <Button fx:id="btnSearchState" mnemonicParsing="false" onAction="#fnSearchStateOfPharmacy" prefHeight="25.0" prefWidth="104.0" text="Pretraga" />
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                      </HBox>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                          <VBox prefHeight="397.0" prefWidth="675.0">
+                                             <children>
+                                                <TableView fx:id="stateTableV" prefHeight="397.0" prefWidth="666.0">
+                                                  <columns>
+                                                      <TableColumn fx:id="colStateName" prefWidth="123.0" text="Naziv" />
+                                                    <TableColumn fx:id="colStateCap" minWidth="0.0" prefWidth="118.0" text="Količina" />
+                                                      <TableColumn fx:id="colStateCode" prefWidth="98.0" text="Šifra leka" />
+                                                    <TableColumn fx:id="colStateJM" prefWidth="53.0" text="JM" />
+                                                      <TableColumn fx:id="colStateManuf" prefWidth="157.0" text="Proizvodjač" />
+                                                      <TableColumn fx:id="colStateActionBox" prefWidth="88.0" text="Akcija" />
+                                                  </columns>
+                                                </TableView>
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER" prefHeight="53.0" prefWidth="616.0">
+                                             <children>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <HBox alignment="CENTER" prefHeight="53.0" prefWidth="251.0">
+                                                         <children>
+                                                            <Button fx:id="btnAddToActionIssuing" disable="true" mnemonicParsing="false" onAction="#fnAddToActionIssuing" prefHeight="25.0" prefWidth="183.0" text="Za recept" />
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER" prefHeight="53.0" prefWidth="205.0">
+                                                         <children>
+                                                            <Button fx:id="btnAddToActionOrder" disable="true" mnemonicParsing="false" onAction="#fnAddToActionOrder" prefWidth="183.0" text="Za nabavku" />
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER" prefHeight="53.0" prefWidth="238.0">
+                                                         <children>
+                                                            <Button fx:id="btnDeactive" disable="true" mnemonicParsing="false" onAction="#fnDeactive" prefWidth="183.0" text="Za brisanje" />
+                                                         </children>
+                                                      </HBox>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="567.0" prefWidth="375.0">
+                                 <children>
+                                    <VBox prefHeight="567.0" prefWidth="345.0">
+                                       <children>
+                                          <VBox alignment="CENTER" minWidth="400.0" prefHeight="92.0" prefWidth="400.0">
+                                             <children>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Izdavanje zahteva">
+                                                   <font>
+                                                      <Font size="20.0" />
+                                                   </font>
+                                                </Text>
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER" minWidth="446.0" prefHeight="389.0" prefWidth="446.0">
+                                             <children>
+                                                <TableView fx:id="actionTableV" maxWidth="-Infinity" prefHeight="388.0" prefWidth="433.0">
+                                                  <columns>
+                                                    <TableColumn fx:id="colActionName" prefWidth="114.0" text="Naziv" />
+                                                      <TableColumn fx:id="colActionCode" prefWidth="87.0" text="Šifra leka" />
+                                                    <TableColumn fx:id="colActionCap" prefWidth="110.0" text="Količina" />
+                                                      <TableColumn fx:id="colActionOrderName" prefWidth="117.0" text="Dobavljač" visible="false" />
+                                                  </columns>
+                                                </TableView>
+                                             </children>
+                                          </VBox>
+                                          <VBox prefHeight="87.0" prefWidth="374.0">
+                                             <children>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                                         <children>
+                                                            <Button fx:id="btnActionExecute" disable="true" mnemonicParsing="false" onAction="#fnActionExecute" prefHeight="25.0" prefWidth="116.0" text="Potvrdi " />
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                                         <children>
+                                                            <Button fx:id="btnActionClear" disable="true" mnemonicParsing="false" onAction="#fnActionClear" prefHeight="25.0" prefWidth="116.0" text="Poništi" />
+                                                         </children>
+                                                      </HBox>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </HBox>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+          <Tab text="Izveštaji">
+               <content>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <VBox prefHeight="208.0" prefWidth="600.0">
+                           <children>
+                              <VBox prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <VBox prefHeight="200.0" prefWidth="100.0">
+                                       <children>
+                                          <HBox prefHeight="100.0" prefWidth="200.0">
+                                             <children>
+                                                <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="231.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Naziv/šifra leka" textAlignment="RIGHT" wrappingWidth="157.80322265625">
+                                                         <HBox.margin>
+                                                            <Insets />
+                                                         </HBox.margin></Text>
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER" prefHeight="50.0" prefWidth="593.0">
+                                                   <children>
+                                                      <TextField fx:id="inputSearchReports" prefHeight="25.0" prefWidth="541.0" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="200.0" prefWidth="100.0">
+                                       <children>
+                                          <HBox prefHeight="100.0" prefWidth="200.0">
+                                             <children>
+                                                <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="365.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Datum od" wrappingWidth="80.314453125" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER" prefHeight="50.0" prefWidth="441.0">
+                                                   <children>
+                                                      <DatePicker fx:id="dateFrom" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="183.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Datum do" wrappingWidth="103.314453125" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="553.0">
+                                                   <children>
+                                                      <DatePicker fx:id="dateTo" prefHeight="25.0" prefWidth="198.0" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="200.0" prefWidth="100.0">
+                                       <children>
+                                          <HBox prefHeight="100.0" prefWidth="200.0">
+                                             <children>
+                                                <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="215.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tip pretrage:" textAlignment="RIGHT" wrappingWidth="91.8046875" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="127.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="izdavanje" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="122.0">
+                                                   <children>
+                                                      <RadioButton fx:id="rbReportIssuing" mnemonicParsing="false" prefHeight="18.0" prefWidth="78.0" selected="true" textAlignment="CENTER">
+                                                         <toggleGroup>
+                                                            <ToggleGroup fx:id="tipGroup" />
+                                                         </toggleGroup></RadioButton>
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="81.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="nabavka" wrappingWidth="83.61181640625" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER" prefHeight="50.0" prefWidth="126.0">
+                                                   <children>
+                                                      <RadioButton fx:id="rbReportOrder" mnemonicParsing="false" prefHeight="18.0" prefWidth="95.0" toggleGroup="$tipGroup" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                       <children>
+                                          <Button fx:id="btnSearch" mnemonicParsing="false" onAction="#fnSearchReports" prefHeight="25.0" prefWidth="243.0" text="Pretraži" />
+                                       </children></VBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="360.0" prefWidth="600.0">
+                           <children>
+                              <TableView fx:id="reportsTView" prefHeight="355.0" prefWidth="600.0">
+                                <columns>
+                                  <TableColumn fx:id="colReportName" prefWidth="230.0" text="Naziv" />
+                                    <TableColumn fx:id="colReportCode" prefWidth="119.0" text="Šifra leka" />
+                                  <TableColumn fx:id="colReportCap" prefWidth="114.0" text="Količina" />
+                                    <TableColumn fx:id="colReportDate" prefWidth="181.0" text="Datum" />
+                                    <TableColumn fx:id="colReportManuf" prefWidth="162.0" text="Proizvodjac" />
+                                    <TableColumn fx:id="colReportSupplier" prefWidth="200.0" text="Dobavljač" />
+                                </columns>
+                              </TableView>
+                           </children></VBox>
+                     </children>
+                  </VBox>
+               </content>
+          </Tab>
+          <Tab fx:id="tabOrder" text="Admin panel">
+               <content>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <HBox prefHeight="62.0" prefWidth="1000.0">
+                           <children>
+                              <HBox alignment="CENTER_RIGHT" prefHeight="156.0" prefWidth="284.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kreiraj novi nalog" wrappingWidth="223.673828125">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="156.0" prefWidth="263.0">
+                                 <children>
+                                    <Button fx:id="btnNewAcc" mnemonicParsing="false" onAction="#setNewAccountStage" prefHeight="25.0" prefWidth="159.0" text="Novi nalog" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="75.0" prefWidth="1000.0">
+                           <children>
+                              <HBox alignment="CENTER_RIGHT" prefHeight="153.0" prefWidth="285.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kreiraj/nabavi novi lek" textAlignment="RIGHT" wrappingWidth="247.697265625">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="196.0" prefWidth="255.0">
+                                 <children>
+                                    <Button fx:id="btnNewMed" mnemonicParsing="false" onAction="#setNewMedicineStage" prefHeight="25.0" prefWidth="165.0" text="Novi lek" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </content></Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</VBox>

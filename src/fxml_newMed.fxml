@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="598.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controlers.NewMedicineController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="289.0" minWidth="10.0" prefWidth="156.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="329.0" minWidth="10.0" prefWidth="183.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="329.0" minWidth="10.0" prefWidth="62.0" />
+  </columnConstraints>
+  <rowConstraints>
+      <RowConstraints maxHeight="208.0" minHeight="10.0" prefHeight="208.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="193.0" minHeight="0.0" prefHeight="55.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="209.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="426.0" minHeight="0.0" prefHeight="45.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="288.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="220.0" minHeight="10.0" prefHeight="56.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="228.0" minHeight="10.0" prefHeight="54.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="228.0" minHeight="10.0" prefHeight="144.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Novi lek" textAlignment="CENTER" wrappingWidth="399.7294921875">
+         <font>
+            <Font size="34.0" />
+         </font>
+      </Text>
+      <TextField fx:id="fieldNameMed" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <TextField fx:id="fieldIdMed" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <TextField fx:id="fieldNameManuf" prefHeight="25.0" prefWidth="195.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <TextField fx:id="fieldJM" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+      <TextField fx:id="fieldCap" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+      <TextField fx:id="fieldSup" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Naziv leka" textAlignment="RIGHT" wrappingWidth="118.7294921875" GridPane.rowIndex="1" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Šifra leka" textAlignment="RIGHT" wrappingWidth="111.7294921875" GridPane.rowIndex="2" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Proizvodjač" textAlignment="RIGHT" wrappingWidth="124.7294921875" GridPane.rowIndex="3" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Jedinica mere" textAlignment="RIGHT" wrappingWidth="139.7294921875" GridPane.rowIndex="4" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Količina" textAlignment="RIGHT" wrappingWidth="101.04248046875" GridPane.rowIndex="5" />
+      <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="*" textAlignment="CENTER" wrappingWidth="17.5" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dobavljač" textAlignment="RIGHT" wrappingWidth="114.0146484375" GridPane.rowIndex="6" />
+      <Button fx:id="btnCreateMed" mnemonicParsing="false" onAction="#createMed" prefHeight="25.0" prefWidth="333.0" text="Kreiraj" textAlignment="RIGHT" GridPane.columnIndex="1" GridPane.rowIndex="7">
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin>
+      </Button>
+      <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="*" textAlignment="CENTER" wrappingWidth="17.5" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+      <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="*" textAlignment="CENTER" wrappingWidth="17.5" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="7">
+         <children>
+            <Button fx:id="btnCancelNewMed" mnemonicParsing="false" onAction="#fnCancelReq" text="Odustani" />
+         </children>
+      </HBox>
+   </children>
+</GridPane>

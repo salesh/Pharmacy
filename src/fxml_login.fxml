@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<GridPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controlers.MainController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="192.0" minWidth="10.0" prefWidth="177.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="248.0" minWidth="10.0" prefWidth="223.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="240.0" minHeight="10.0" prefHeight="185.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="304.0" minHeight="10.0" prefHeight="48.0" valignment="CENTER" />
+    <RowConstraints maxHeight="304.0" minHeight="10.0" prefHeight="46.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="304.0" minHeight="10.0" prefHeight="124.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Korisničko ime" textAlignment="RIGHT" wrappingWidth="161.09423828125" GridPane.rowIndex="1" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Lozinka" textAlignment="RIGHT" wrappingWidth="160.36572265625" GridPane.rowIndex="2" />
+      <TextField fx:id="fieldUser" maxWidth="160.0" prefHeight="25.0" prefWidth="163.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <tooltip>
+            <Tooltip text="3-15 karaktera, mala slova _ -  i brojevi" />
+         </tooltip></TextField>
+      <PasswordField fx:id="fieldPass" maxWidth="160.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <tooltip>
+            <Tooltip text="8 karaktera, bar jedno malo slovo, veliko slovo, broj i specijalni karakter" />
+         </tooltip></PasswordField>
+      <Button fx:id="btnLog" mnemonicParsing="false" onAction="#authenticationLogIn" prefHeight="25.0" prefWidth="124.0" text="Uloguj se" GridPane.columnIndex="1" GridPane.rowIndex="3">
+         <GridPane.margin>
+            <Insets left="35.0" />
+         </GridPane.margin>
+      </Button>
+      <HBox alignment="CENTER" minWidth="400.0" prefHeight="184.0" prefWidth="278.0">
+         <children>
+            <ImageView fitHeight="84.0" fitWidth="108.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@logo.png" />
+               </image>
+            </ImageView>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="A Medic" textAlignment="CENTER" wrappingWidth="204.7294921875">
+               <font>
+                  <Font size="32.0" />
+               </font>
+            </Text>
+         </children>
+      </HBox>
+   </children>
+</GridPane>
